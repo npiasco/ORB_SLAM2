@@ -489,4 +489,10 @@ vector<cv::KeyPoint> System::GetTrackedKeyPointsUn()
     return mTrackedKeyPointsUn;
 }
 
+vector<MapPoint*> System::GetMapPoints()
+{
+    unique_lock<mutex> lock(mMutexState);
+    return mpMap->GetAllMapPoints();
+}
+
 } //namespace ORB_SLAM
