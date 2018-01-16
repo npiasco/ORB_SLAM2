@@ -37,7 +37,7 @@ if(NOT OpenCV_FOUND)
 endif()
 
 find_package(Eigen3 3.1.0 REQUIRED)
-
+find_package(OpenGL REQUIRED)
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
@@ -73,9 +73,10 @@ src/Viewer.cc
 target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}
 ${EIGEN3_LIBS}
+${OPENGL_LIBRARY}
+${PROJECT_SOURCE_DIR}/Thirdparty/Pangolin/lib/libpangolin.so
 ${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so
 ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
-${PROJECT_SOURCE_DIR}/Thirdparty/Pangolin/lib/libpangolin.so
 )
 
 # Build examples
