@@ -63,23 +63,6 @@ int main(int argc, char **argv)
 
      // Pass the image to the SLAM system
      auto pose = SLAM.TrackMonocular(frame, timeStamps);
-     
-
-     auto tracked_pts = SLAM.GetTrackedMapPoints();
-     cout << tracked_pts.size() << ' ';
-     auto tracked_keypoints = SLAM.GetTrackedKeyPointsUn();
-     cout << tracked_keypoints.size() << endl;
-     cout << pose << endl;
-     auto pts = SLAM.GetMapPoints();
-     int cpt = 0;
-     if(!pts.empty())
-     {
-        for (auto it=pts.begin();it!=pts.end();++it)
-        {
-            cout << (*it)->GetWorldPos() << endl;
-        }
-     }
-     cout << "CPT " << cpt << endl;
     }
 
    // Stop all threads
