@@ -38,12 +38,13 @@ endif()
 
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(OpenGL REQUIRED)
+find_package(Pangolin REQUIRED)
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
 ${PROJECT_SOURCE_DIR}/include
 ${EIGEN3_INCLUDE_DIR}
-${PROJECT_SOURCE_DIR}/Thirdparty/Pangolin/include
+${Pangolin_INCLUDE_DIRS}
 )
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
@@ -74,7 +75,7 @@ target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}
 ${EIGEN3_LIBS}
 ${OPENGL_LIBRARY}
-${PROJECT_SOURCE_DIR}/Thirdparty/Pangolin/lib/libpangolin.so
+${Pangolin_LIBRARIES}
 ${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so
 ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
 )
