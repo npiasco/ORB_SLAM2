@@ -30,7 +30,9 @@
 #include "KeyFrame.h"
 #include "ORBextractor.h"
 
+#include<unistd.h>
 #include <opencv2/opencv.hpp>
+
 
 namespace ORB_SLAM2
 {
